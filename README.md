@@ -1,19 +1,14 @@
-# RUGMOP Web3 Safety Hub FINAL v4
+# RUGMOP Web3 Mop Station — Final No-Image Version
 
-This is the single authoritative GitHub Pages deployment package.
+This version intentionally removes all generated image dependencies.
 
-Important:
-- Uses versioned images:
-  - assets/rugmop-logo-v4.png
-  - assets/rugmop-banner-v4.png
-- index.html references only the v4 assets.
-- Old assets may remain in the repo, but they are no longer used.
-- No 1% language.
-- No creator cap language.
-- No guaranteed-return language.
-- No wallet connection or transaction signing.
+Reason:
+Previous image assets contained crop issues, inaccurate text, or possible misleading visual language.
+This package uses pure HTML/CSS for the hero and branding to prevent stale assets or broken visual metadata.
 
-Official:
-- CA: CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump
-- Pump.fun: https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump
-- X: https://x.com/RUGMOPtoken
+Upload:
+- index.html
+- .nojekyll
+- README.md
+
+Old assets may remain in the repo; this HTML does not reference them.
