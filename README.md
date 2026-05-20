@@ -1,14 +1,13 @@
-# RUGMOP Web3 Mop Station — Final No-Image Version
+# RUGMOP Official Website v1
 
-This version intentionally removes all generated image dependencies.
+Static official landing page for RUGMOP.
 
-Reason:
-Previous image assets contained crop issues, inaccurate text, or possible misleading visual language.
-This package uses pure HTML/CSS for the hero and branding to prevent stale assets or broken visual metadata.
+Official:
+- X: https://x.com/RUGMOPtoken
+- Pump.fun: https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump
+- CA: CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump
 
-Upload:
-- index.html
-- .nojekyll
-- README.md
+Deploy this folder to Cloudflare Pages, Vercel, Netlify, or GitHub Pages.
 
-Old assets may remain in the repo; this HTML does not reference them.
+Do not add any unconfigured creator allocation/cap claim.
+Do not add guaranteed-return language.

@@ -3,140 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RUGMOP Web3 Mop Station</title>
-<meta name="description" content="RUGMOP Web3 Mop Station: verify official links, check CA, scan scam phrases, and avoid Web3 slop.">
-<meta property="og:title" content="RUGMOP Web3 Mop Station">
-<meta property="og:description" content="Verify links. Check CA. Avoid scams. No wallet connection.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RUGMOP Web3 Mop Station">
-<meta name="twitter:description" content="Verify links. Check CA. Avoid scams.">
+<title>RUGMOP — Mop the rugs. Meme the slop.</title>
+<meta name="description" content="RUGMOP is a Solana meme coin cleaning up rugs, AI slop, and crypto noise. No presale. No hidden allocation. No guaranteed returns.">
+<meta property="og:title" content="RUGMOP — Mop the rugs. Meme the slop.">
+<meta property="og:description" content="Solana meme coin. No presale. No hidden allocation. Creator rewards enabled. No guaranteed returns.">
+<meta property="og:image" content="./assets/rugmop-original-banner-v1.png?v=restore-v1">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/rugmop-original-icon-v1.png?v=restore-v1">
 <style>
-:root {
-  --bg:#020603; --panel:#071208d9; --panel2:#0b1e0edd; --text:#f5f8ef; --muted:#b8c6b5;
-  --green:#83ff48; --green2:#28de62; --gold:#e8c05a; --red:#ff7171; --line:#83ff4840;
-}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.5;background:
-radial-gradient(circle at 15% 10%,#83ff482b,transparent 28%),
-linear-gradient(180deg,#020503,#041108 52%,#020503)}
-body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(#83ff480e 1px,transparent 1px),linear-gradient(90deg,#83ff480e 1px,transparent 1px);background-size:42px 42px;z-index:-1;pointer-events:none}
-a{color:inherit;text-decoration:none} .wrap{width:min(1160px,calc(100% - 34px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:#020704d8;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-nav{height:72px;display:flex;justify-content:space-between;align-items:center;gap:16px} .brand{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:950;letter-spacing:-.04em}
-.logo{width:44px;height:44px;border:1px solid var(--line);border-radius:13px;display:grid;place-items:center;background:#031307;color:var(--green);font-weight:950;box-shadow:0 0 30px #83ff4826}
-.links{display:flex;gap:14px;align-items:center;color:var(--muted);font-weight:800;font-size:14px} .links a:hover{color:var(--green)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;border:1px solid #83ff486b;background:linear-gradient(135deg,#83ff48,#28de62);color:#061006;font-weight:950;cursor:pointer}
-.btn.alt{background:#ffffff08;color:var(--text)} .btn.warn{background:#e8c05a20;color:#ffe8a4;border-color:#e8c05a66}
-.hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr .95fr;gap:34px;align-items:center;padding:64px 0 52px}
-.eyebrow{color:var(--green);font-weight:950;text-transform:uppercase;letter-spacing:.14em;font-size:13px;margin-bottom:16px}
-h1{margin:0;font-size:clamp(50px,8.5vw,110px);line-height:.86;letter-spacing:-.08em;text-transform:uppercase} .green{color:var(--green)}
-.lead{color:var(--muted);font-size:clamp(18px,2vw,23px);max-width:760px;margin:26px 0 0} .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.panel,.tool,.card{border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,#ffffff10,#ffffff05);box-shadow:0 24px 80px #0007}
-.hero-art{padding:28px;min-height:500px;display:grid;align-content:center;gap:20px;overflow:hidden}
-.art-title{font-size:clamp(40px,6vw,86px);font-weight:950;line-height:.9;letter-spacing:-.06em;text-transform:uppercase}
-.art-sub{font-size:clamp(20px,3vw,38px);font-weight:950;color:var(--green);text-transform:uppercase}
-.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
-.art-card{border:1px solid var(--line);border-radius:20px;background:#0007;padding:18px;min-height:116px}
-.art-icon{font-size:34px;margin-bottom:8px} .art-card strong{display:block;font-size:20px;text-transform:uppercase} .art-card span{color:var(--muted);font-size:14px}
-.ribbon{border:1px solid #e8c05a66;background:#e8c05a17;color:#ffe8a4;border-radius:18px;padding:14px 16px;font-weight:900}
-.ca{margin-top:22px;border:1px solid var(--line);background:#0006;border-radius:18px;padding:16px} .ca small{display:flex;justify-content:space-between;color:var(--muted);font-weight:950;letter-spacing:.08em;text-transform:uppercase} .ca code{display:block;margin-top:8px;color:var(--green);word-break:break-all} .copy{border:0;background:transparent;color:var(--gold);font-weight:950;cursor:pointer}
-section{padding:60px 0} h2{font-size:clamp(36px,5vw,62px);line-height:.94;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 12px} .sub{color:var(--muted);font-size:18px;max-width:820px;margin:0 0 24px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .grid.two{grid-template-columns:repeat(2,1fr)} .card{padding:24px}
-.tag{display:inline-block;margin-bottom:14px;padding:6px 10px;border:1px solid #83ff4859;border-radius:999px;color:var(--green);font-size:12px;font-weight:950;letter-spacing:.08em;text-transform:uppercase} .card h3,.tool h3{margin:0 0 10px;font-size:22px} .card p{margin:0;color:var(--muted)}
-.tool{padding:24px} .toolrow{display:grid;grid-template-columns:1fr auto;gap:10px;margin:14px 0} input,textarea{width:100%;border:1px solid #83ff483d;border-radius:16px;padding:14px 15px;background:#0007;color:var(--text);font:inherit} textarea{min-height:140px;resize:vertical}
-.result{margin-top:14px;border-radius:18px;padding:16px;border:1px solid #83ff4833;background:#ffffff08} .good{border-color:#83ff487a;color:#d7ffc9} .bad{border-color:#ff71717a;color:#ffd0d0} .warn{border-color:#e8c05a85;color:#ffe6a4}
-.pill{display:inline-block;margin:4px;padding:8px 10px;border-radius:999px;border:1px solid #83ff4833;background:#0005;color:var(--muted);font-size:13px}
-.check{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:13px;margin:8px 0;border-radius:16px;border:1px solid #83ff4829;background:#0004;color:var(--muted)} .score{margin-top:14px;padding:16px;border-radius:18px;border:1px solid #e8c05a66;background:#e8c05a17;color:#ffe8a4;font-weight:950}
-.report{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;background:#0008;border:1px solid #83ff4833;border-radius:18px;padding:16px;color:#dcebd7;overflow-x:auto} .notice{border:1px solid #e8c05a66;background:#e8c05a17;color:#ffe8a4;border-radius:22px;padding:18px;font-weight:800} .footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}
-@media(max-width:900px){.hero,.grid,.grid.two,.art-grid{grid-template-columns:1fr}.links{display:none}.toolrow{grid-template-columns:1fr}}
+:root{--bg:#030805;--panel:rgba(4,16,7,.82);--text:#f5f7ef;--muted:#b9c7b7;--green:#82ff45;--gold:#e7c45f;--line:rgba(130,255,69,.28)}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 20% 10%,rgba(130,255,69,.18),transparent 28%),linear-gradient(180deg,#020403,#041108 45%,#020403);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.5}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(130,255,69,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(130,255,69,.055) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:-1}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 34px));margin:auto}
+header{position:sticky;top:0;z-index:5;background:rgba(2,7,4,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+nav{height:72px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px;letter-spacing:-.04em}.brand img{width:42px;height:42px;border-radius:12px;border:1px solid var(--line)}
+.links{display:flex;gap:14px;align-items:center;color:var(--muted);font-weight:800;font-size:14px}.links a:hover{color:var(--green)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;border:1px solid rgba(130,255,69,.45);background:linear-gradient(135deg,var(--green),#2be761);color:#061006;font-weight:900}.btn.alt{background:rgba(255,255,255,.04);color:var(--text)}
+.hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr .95fr;gap:34px;align-items:center;padding:68px 0 52px}.eyebrow{color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:13px;margin-bottom:16px}
+h1{margin:0;font-size:clamp(52px,9vw,112px);line-height:.86;letter-spacing:-.08em;text-transform:uppercase}.green{color:var(--green)}.lead{font-size:clamp(18px,2vw,23px);color:var(--muted);max-width:730px;margin:26px 0 0}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.heroimg{border:1px solid var(--line);border-radius:28px;background:rgba(255,255,255,.04);padding:14px;box-shadow:0 28px 90px rgba(0,0,0,.45)}.heroimg img{display:block;width:100%;border-radius:20px;border:1px solid var(--line)}
+.ca{margin-top:24px;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.35);padding:16px}.ca small{display:flex;justify-content:space-between;color:var(--muted);font-weight:900;letter-spacing:.08em;text-transform:uppercase}.ca code{display:block;margin-top:8px;color:var(--green);word-break:break-all}.copy{border:0;background:transparent;color:var(--gold);font-weight:900;cursor:pointer}
+section{padding:62px 0}h2{font-size:clamp(36px,5vw,62px);line-height:.94;letter-spacing:-.06em;text-transform:uppercase;margin:0 0 12px}.sub{color:var(--muted);font-size:18px;max-width:760px;margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));padding:24px}.tag{display:inline-block;color:var(--green);border:1px solid rgba(130,255,69,.35);border-radius:999px;padding:6px 10px;font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}.card h3{margin:0 0 10px;font-size:22px}.card p{color:var(--muted);margin:0}
+.table{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:rgba(0,0,0,.32)}.row{display:grid;grid-template-columns:.75fr 1.25fr;border-bottom:1px solid rgba(130,255,69,.16)}.row:last-child{border-bottom:0}.cell{padding:17px 20px;word-break:break-word}.cell:first-child{background:rgba(255,255,255,.035);color:var(--muted);font-weight:900}
+.notice{border:1px solid rgba(231,196,95,.35);background:rgba(231,196,95,.1);color:#ffe7a4;border-radius:22px;padding:18px;font-weight:800;margin-top:22px}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}
+@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.links{display:none}.row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="#top"><span class="logo">RM</span><span>RUGMOP</span></a><div class="links"><a href="#tools">Tools</a><a href="#checklist">Checklist</a><a href="#meme-kit">Meme Kit</a><a href="#report">Slop Report</a><a class="btn" href="https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump" target="_blank" rel="noopener">Pump.fun</a></div></nav></div></header>
-
+<header><div class="wrap"><nav><a class="brand" href="#top"><img src="./assets/rugmop-original-icon-v1.png?v=restore-v1" alt="RUGMOP icon"><span>RUGMOP</span></a><div class="links"><a href="#about">About</a><a href="#token">Token</a><a href="#community">Community</a><a href="#safety">Safety</a><a class="btn" target="_blank" rel="noopener" href="https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump">Pump.fun</a></div></nav></div></header>
 <main id="top">
-<section class="hero wrap">
-<div>
-<div class="eyebrow">Web3 anti-rug / anti-slop safety hub</div>
-<h1>Clean your timeline<br><span class="green">before it rugs you.</span></h1>
-<p class="lead">RUGMOP is a Web3 meme safety hub. Verify the official CA, check suspicious links, scan scam language, and learn the red flags behind crypto rugs and AI slop.</p>
-<div class="actions"><a class="btn" href="#tools">Open Safety Tools</a><a class="btn alt" href="https://x.com/RUGMOPtoken" target="_blank" rel="noopener">Follow @RUGMOPtoken</a></div>
-<div class="ca"><small><span>Official CA</span><button class="copy" onclick="copyText(OFFICIAL_CA,this)">Copy</button></small><code>CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</code></div>
-</div>
-<div class="panel hero-art">
-<div class="art-title">RUG<span class="green">MOP</span></div>
-<div class="art-sub">Web3 Mop Station</div>
-<div class="ribbon">No wallet connection. No transaction signing. No guaranteed returns.</div>
-<div class="art-grid">
-<div class="art-card"><div class="art-icon">🛡️</div><strong>Verify links</strong><span>Use official sources only</span></div>
-<div class="art-card"><div class="art-icon">🔗</div><strong>Check CA</strong><span>Match the contract address</span></div>
-<div class="art-card"><div class="art-icon">🧹</div><strong>Avoid scams</strong><span>Mop the slop before clicking</span></div>
-</div>
-</div>
-</section>
-
-<section class="wrap"><h2>What this is</h2><p class="sub">Not a fake utility roadmap. Not a wallet-draining claim page. RUGMOP starts with simple zero-cost safety tools that do not require wallet connection or signatures.</p><div class="grid"><div class="card"><span class="tag">Official links</span><h3>Verify before clicking</h3><p>Use this page as the central source for the official CA, Pump.fun link, and X account.</p></div><div class="card"><span class="tag">Scam language</span><h3>Mop bad promises</h3><p>Paste suspicious DMs or posts and flag common phrases like guaranteed returns or private sales.</p></div><div class="card"><span class="tag">Meme kit</span><h3>Spread without slop</h3><p>Use clean RUGMOP wording and approved safety language for organic posts.</p></div></div></section>
-
-<section id="tools" class="wrap"><h2>Safety Tools</h2><p class="sub">Static browser-side checks. No wallet connection. No transaction signing. No private key requests.</p><div class="grid two">
-<div class="tool"><span class="tag">Tool 01</span><h3>Official CA Verifier</h3><p class="sub">Paste a contract address to check whether it matches the official RUGMOP CA.</p><div class="toolrow"><input id="caInput" placeholder="Paste CA here"><button class="btn" onclick="verifyCA()">Verify</button></div><div id="caResult" class="result warn">Waiting for CA input.</div></div>
-<div class="tool"><span class="tag">Tool 02</span><h3>Official Link Checker</h3><p class="sub">Paste a URL to check whether it matches approved RUGMOP links.</p><div class="toolrow"><input id="linkInput" placeholder="Paste URL here"><button class="btn" onclick="verifyLink()">Check</button></div><div id="linkResult" class="result warn">Waiting for URL input.</div></div>
-<div class="tool"><span class="tag">Tool 03</span><h3>Scam Phrase Checker</h3><p class="sub">Paste a DM, tweet, or promo message and flag high-risk language.</p><textarea id="phraseInput" placeholder="Paste suspicious message here"></textarea><div class="actions"><button class="btn" onclick="scanPhrase()">Scan text</button><button class="btn alt" onclick="clearPhrase()">Clear</button></div><div id="phraseResult" class="result warn">Waiting for text input.</div></div>
-<div class="tool"><span class="tag">Mop list</span><h3>Known Slop Phrases</h3><p class="sub">These phrases are not automatic proof of fraud, but they are red flags.</p><div id="phraseList"></div></div>
-</div></section>
-
-<section id="checklist" class="wrap"><h2>Anti-rug Checklist</h2><p class="sub">Check any project. More checked boxes means more risk signals to investigate before interacting.</p><div class="tool"><div id="rugChecklist"></div><div class="score" id="riskScore">Risk score: 0 / 10 — clean for now.</div></div></section>
-
-<section id="meme-kit" class="wrap"><h2>Meme Kit</h2><p class="sub">Use clean project lines. Avoid guaranteed-return language and fake listing claims.</p><div class="grid"><div class="card"><span class="tag">Caption</span><h3>Core line</h3><p>Mop the rugs. Meme the slop. 🧹</p></div><div class="card"><span class="tag">Reply</span><h3>Short reply</h3><p>too much slop. bring the mop 🧹</p></div><div class="card"><span class="tag">Safety</span><h3>Official wording</h3><p>No presale. No hidden allocation. No guaranteed returns. Creator rewards enabled.</p></div></div></section>
-
-<section id="report" class="wrap"><h2>Weekly Slop Report</h2><p class="sub">A repeatable content format for weekly safety education and meme distribution.</p><div class="tool"><div class="report" id="reportTemplate"></div><div class="actions"><button class="btn" onclick="copyReport(this)">Copy report template</button></div></div></section>
-
-<section class="wrap"><h2>Official Links</h2><p class="sub">Only trust these links. RUGMOP will not DM you first, ask for seed phrases, or request private wallet signatures.</p><div class="grid"><div class="card"><span class="tag">CA</span><h3>Contract Address</h3><p style="word-break:break-all;">CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</p></div><div class="card"><span class="tag">Launch</span><h3>Pump.fun</h3><p><a href="https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump" target="_blank" rel="noopener">https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</a></p></div><div class="card"><span class="tag">Social</span><h3>X / Twitter</h3><p><a href="https://x.com/RUGMOPtoken" target="_blank" rel="noopener">@RUGMOPtoken</a></p></div></div></section>
-<section class="wrap"><div class="notice">Risk notice: RUGMOP is a meme coin and Web3 safety-themed community project. It is not an investment product, equity, yield product, or guaranteed-return asset. Crypto assets are volatile and may lose all value.</div></section>
+<section class="hero wrap"><div><div class="eyebrow">Solana meme coin • fair launch</div><h1>Mop the rugs.<br><span class="green">Meme the slop.</span></h1><p class="lead">RUGMOP is a Solana meme coin built around one clean joke: crypto has enough rugs, AI slop, fake promises, and recycled noise. We brought a raccoon with a mop.</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump">View on Pump.fun</a><a class="btn alt" target="_blank" rel="noopener" href="https://x.com/RUGMOPtoken">Follow @RUGMOPtoken</a></div><div class="ca"><small><span>Official CA</span><button class="copy" onclick="copyCA()">Copy</button></small><code id="ca">CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</code></div></div><div class="heroimg"><img src="./assets/rugmop-original-banner-v1.png?v=restore-v1" alt="RUGMOP banner"></div></section>
+<section id="about" class="wrap"><h2>Why RUGMOP</h2><p class="sub">A meme-native brand with a simple visual loop: rug detected, mop deployed.</p><div class="grid"><div class="card"><span class="tag">Narrative</span><h3>Anti-rug humor</h3><p>Turns crypto’s shared rug-pull anxiety into a readable mascot and recurring joke.</p></div><div class="card"><span class="tag">Culture</span><h3>Anti-slop energy</h3><p>Mocks fake roadmaps, AI slop, engagement bait, and copy-paste token launches.</p></div><div class="card"><span class="tag">Meme engine</span><h3>Sticker-ready</h3><p>A raccoon janitor with a mop works across X, Telegram, Discord, Pump.fun, and sticker posts.</p></div></div></section>
+<section id="token" class="wrap"><h2>Token Info</h2><p class="sub">Verify the CA before interacting with any token page.</p><div class="table"><div class="row"><div class="cell">Name</div><div class="cell">RUGMOP</div></div><div class="row"><div class="cell">Ticker</div><div class="cell">$RUGMOP</div></div><div class="row"><div class="cell">Chain</div><div class="cell">Solana</div></div><div class="row"><div class="cell">Launch</div><div class="cell">Pump.fun</div></div><div class="row"><div class="cell">CA</div><div class="cell">CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</div></div><div class="row"><div class="cell">Presale</div><div class="cell">None</div></div><div class="row"><div class="cell">Hidden allocation</div><div class="cell">None stated by the official project</div></div><div class="row"><div class="cell">Creator rewards</div><div class="cell">Enabled and routed to the official creator profile</div></div><div class="row"><div class="cell">Guarantees</div><div class="cell">No guaranteed returns. Meme coin risk applies.</div></div></div></section>
+<section id="community" class="wrap"><h2>Community Hub</h2><p class="sub">The website gives RUGMOP a stable home. Next step: add Telegram or Discord once the official hub is ready.</p><div class="grid"><div class="card"><span class="tag">Live</span><h3>Official X</h3><p>@RUGMOPtoken is the primary announcement channel.</p></div><div class="card"><span class="tag">Live</span><h3>Pump.fun</h3><p>Official trading page and launch record.</p></div><div class="card"><span class="tag">Coming soon</span><h3>TG / Discord</h3><p>Add a community hub only when moderation rules and scam warnings are ready.</p></div></div></section>
+<section id="safety" class="wrap"><h2>Safety</h2><p class="sub">RUGMOP is a meme coin. It is not an investment product, equity, yield product, or guaranteed-return asset.</p><div class="grid"><div class="card"><span class="tag">Rule 01</span><h3>No DMs first</h3><p>The official project will not DM you first to sell tokens.</p></div><div class="card"><span class="tag">Rule 02</span><h3>No seed phrase</h3><p>Never share seed phrases, private keys, or sign unknown transactions.</p></div><div class="card"><span class="tag">Rule 03</span><h3>Official links only</h3><p>Use only links posted on @RUGMOPtoken and this website.</p></div></div><div class="notice">Meme coin risk: no guaranteed returns. Crypto assets are volatile and may lose all value.</div></section>
 </main>
-
-<footer class="footer"><div class="wrap"><strong>RUGMOP Web3 Mop Station</strong> — Clean your timeline before it rugs you. Official CA: CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</div></footer>
-<script>
-const OFFICIAL_CA="CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump";
-const OFFICIAL_LINKS=["https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump","https://x.com/RUGMOPtoken","https://twitter.com/RUGMOPtoken"];
-const SCAM_PHRASES=["guaranteed return","guaranteed returns","100x","1000x","moon soon","next pepe","next doge","binance soon","coinbase soon","private sale","presale allocation","send sol","send eth","connect wallet","sign transaction","seed phrase","private key","airdrop claim","claim now","admin will dm","safe profit","risk free","floor locked","we have whales","pump group","artificial volume","fake holders","whitelist open"];
-const CHECKS=["The project promises guaranteed returns or fixed profit.","Someone asks you to send SOL/ETH privately for allocation.","The team says a major exchange listing is guaranteed.","A link asks you to connect wallet for an airdrop or claim.","Someone asks for your seed phrase, private key, or recovery words.","The project refuses to show the official CA clearly.","The project uses fake celebrity, exchange, or influencer branding.","The account DMs first and pressures you to act quickly.","The project relies only on pump/moon/100x language.","The official links are inconsistent across X, website, and token page."];
-const REPORT=`RUGMOP Weekly Slop Report #__
-
-Slop phrase of the week:
-- Example: "guaranteed 100x"
-
-Mop rating:
-- Risk level: low / medium / high
-
-What to check:
-1. Official CA
-2. Official links
-3. No private wallet requests
-4. No seed phrase requests
-5. No guaranteed returns
-
-Meme of the week:
-- [insert community meme]
-
-Safety reminder:
-Never share your seed phrase.
-Never sign unknown transactions.
-Only trust official links.
-
-Official RUGMOP:
-CA: CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump
-X: @RUGMOPtoken
-Pump.fun: https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump`;
-function norm(s){return (s||"").trim().toLowerCase().replace(/\/+$/,"")}
-function copyText(t,b){navigator.clipboard.writeText(t).then(()=>{let o=b.textContent;b.textContent="Copied";setTimeout(()=>b.textContent=o,1200)})}
-function verifyCA(){let v=document.getElementById("caInput").value.trim(),r=document.getElementById("caResult");if(!v){r.className="result warn";r.textContent="Paste a CA first.";return}if(v===OFFICIAL_CA){r.className="result good";r.textContent="MATCH: This is the official RUGMOP CA."}else{r.className="result bad";r.textContent="NO MATCH: This is not the official RUGMOP CA. Do not interact unless you can independently verify it."}}
-function verifyLink(){let v=norm(document.getElementById("linkInput").value),r=document.getElementById("linkResult");if(!v){r.className="result warn";r.textContent="Paste a URL first.";return}let ok=OFFICIAL_LINKS.map(norm).includes(v)||(v.includes("pump.fun/coin/")&&v.includes(OFFICIAL_CA.toLowerCase()));if(ok){r.className="result good";r.textContent="MATCH: This is an approved RUGMOP link."}else{r.className="result bad";r.textContent="NO MATCH: This is not in the approved RUGMOP link list. Treat it as suspicious."}}
-function scanPhrase(){let t=norm(document.getElementById("phraseInput").value),r=document.getElementById("phraseResult");if(!t){r.className="result warn";r.textContent="Paste a message first.";return}let hits=SCAM_PHRASES.filter(p=>t.includes(p));if(!hits.length){r.className="result good";r.textContent="No listed high-risk phrases detected. Still verify links and never sign unknown transactions."}else{r.className="result bad";r.innerHTML="High-risk phrases detected:<br><strong>"+hits.join(", ")+"</strong><br><br>Mop it before you click."}}
-function clearPhrase(){document.getElementById("phraseInput").value="";let r=document.getElementById("phraseResult");r.className="result warn";r.textContent="Waiting for text input."}
-function updateRiskScore(){let c=[...document.querySelectorAll(".rug-check")].filter(x=>x.checked).length,s=document.getElementById("riskScore"),l="clean for now";if(c>=7)l="high risk — mop immediately";else if(c>=4)l="medium risk — investigate before clicking";else if(c>=1)l="low/moderate risk — proceed carefully";s.textContent=`Risk score: ${c} / 10 — ${l}.`}
-function copyReport(b){navigator.clipboard.writeText(REPORT).then(()=>{let o=b.textContent;b.textContent="Copied";setTimeout(()=>b.textContent=o,1200)})}
-function init(){document.getElementById("phraseList").innerHTML=SCAM_PHRASES.map(p=>`<span class="pill">${p}</span>`).join("");document.getElementById("rugChecklist").innerHTML=CHECKS.map((c,i)=>`<label class="check"><input class="rug-check" type="checkbox" onchange="updateRiskScore()"><span>${i+1}. ${c}</span></label>`).join("");document.getElementById("reportTemplate").textContent=REPORT}
-init();
-</script>
+<footer><div class="wrap"><strong>RUGMOP</strong> — Mop the rugs. Meme the slop. Official CA: CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</div></footer>
+<script>function copyCA(){const ca="CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump";navigator.clipboard.writeText(ca).then(()=>{const b=document.querySelector(".copy");const t=b.textContent;b.textContent="Copied";setTimeout(()=>b.textContent=t,1200)})}</script>
 </body>
 </html>
