@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RUGMOP Meme Lab</title>
+<meta name="description" content="RUGMOP Meme Lab: The Mop List, Rug Bingo, copyable replies, and Slop of the Week.">
+<link rel="icon" href="../assets/rugmop-original-icon.png">
+<style>
+
+:root{
+  --bg:#030805;
+  --panel:rgba(4,16,7,.82);
+  --panel2:rgba(8,28,11,.76);
+  --text:#f5f7ef;
+  --muted:#b9c7b7;
+  --green:#82ff45;
+  --gold:#e7c45f;
+  --red:#ff7777;
+  --line:rgba(130,255,69,.28);
+  --line2:rgba(231,196,95,.34);
+  --shadow:0 28px 90px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(130,255,69,.18),transparent 28%),
+    radial-gradient(circle at 82% 0%,rgba(231,196,95,.10),transparent 30%),
+    linear-gradient(180deg,#020403,#041108 45%,#020403);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+  line-height:1.5;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(130,255,69,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(130,255,69,.055) 1px,transparent 1px);
+  background-size:44px 44px;
+  pointer-events:none;
+  z-index:-1;
+  mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,calc(100% - 34px));margin:auto}
+header{
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:rgba(2,7,4,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+nav{height:72px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px;letter-spacing:-.04em}
+.brand img{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);object-fit:cover}
+.links{display:flex;gap:14px;align-items:center;color:var(--muted);font-weight:800;font-size:14px}
+.links a:hover{color:var(--green)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 18px;
+  border-radius:999px;
+  border:1px solid rgba(130,255,69,.45);
+  background:linear-gradient(135deg,var(--green),#2be761);
+  color:#061006;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 18px 55px rgba(43,231,97,.14);
+}
+.btn.alt{background:rgba(255,255,255,.04);color:var(--text);box-shadow:none}
+.btn.gold{background:rgba(231,196,95,.12);color:#ffe8a4;border-color:var(--line2);box-shadow:none}
+.hero{
+  min-height:calc(100vh - 72px);
+  display:grid;
+  grid-template-columns:1fr .95fr;
+  gap:34px;
+  align-items:center;
+  padding:68px 0 52px;
+}
+.eyebrow{
+  color:var(--green);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:13px;
+  margin-bottom:16px;
+}
+h1{
+  margin:0;
+  font-size:clamp(52px,9vw,112px);
+  line-height:.86;
+  letter-spacing:-.08em;
+  text-transform:uppercase;
+}
+.green{color:var(--green)}
+.lead{
+  font-size:clamp(18px,2vw,23px);
+  color:var(--muted);
+  max-width:730px;
+  margin:26px 0 0;
+}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.heroimg{
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:rgba(255,255,255,.04);
+  padding:14px;
+  box-shadow:var(--shadow);
+}
+.heroimg img{
+  display:block;
+  width:100%;
+  border-radius:20px;
+  border:1px solid var(--line);
+}
+.ca{
+  margin-top:24px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(0,0,0,.35);
+  padding:16px;
+}
+.ca small{
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.ca code{
+  display:block;
+  margin-top:8px;
+  color:var(--green);
+  word-break:break-all;
+}
+.copy{border:0;background:transparent;color:var(--gold);font-weight:900;cursor:pointer}
+section{padding:62px 0}
+h2{
+  font-size:clamp(36px,5vw,62px);
+  line-height:.94;
+  letter-spacing:-.06em;
+  text-transform:uppercase;
+  margin:0 0 12px;
+}
+.sub{color:var(--muted);font-size:18px;max-width:760px;margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card,.tool{
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+  padding:24px;
+  box-shadow:0 18px 55px rgba(0,0,0,.25);
+}
+.tag{
+  display:inline-block;
+  color:var(--green);
+  border:1px solid rgba(130,255,69,.35);
+  border-radius:999px;
+  padding:6px 10px;
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.card h3,.tool h3{margin:0 0 10px;font-size:22px}
+.card p{color:var(--muted);margin:0}
+.table{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:rgba(0,0,0,.32)}
+.row{display:grid;grid-template-columns:.75fr 1.25fr;border-bottom:1px solid rgba(130,255,69,.16)}
+.row:last-child{border-bottom:0}
+.cell{padding:17px 20px;word-break:break-word}
+.cell:first-child{background:rgba(255,255,255,.035);color:var(--muted);font-weight:900}
+.notice{
+  border:1px solid rgba(231,196,95,.35);
+  background:rgba(231,196,95,.1);
+  color:#ffe7a4;
+  border-radius:22px;
+  padding:18px;
+  font-weight:800;
+  margin-top:22px;
+}
+.tool-row{display:grid;grid-template-columns:1fr auto;gap:10px;margin:14px 0}
+input,textarea{
+  width:100%;
+  border:1px solid rgba(130,255,69,.24);
+  border-radius:16px;
+  padding:14px 15px;
+  background:rgba(0,0,0,.42);
+  color:var(--text);
+  font:inherit;
+  outline:none;
+}
+textarea{min-height:140px;resize:vertical}
+input:focus,textarea:focus{border-color:rgba(130,255,69,.66);box-shadow:0 0 0 4px rgba(130,255,69,.08)}
+.result{margin-top:14px;border-radius:18px;padding:16px;border:1px solid rgba(130,255,69,.2);background:rgba(255,255,255,.04)}
+.good{border-color:rgba(130,255,69,.5);color:#d6ffc7}
+.bad{border-color:rgba(255,104,104,.5);color:#ffd0d0}
+.warn{border-color:rgba(231,196,95,.52);color:#ffe8aa}
+.pill{display:inline-block;margin:4px;padding:8px 10px;border-radius:999px;border:1px solid rgba(130,255,69,.2);background:rgba(0,0,0,.32);color:var(--muted);font-size:13px}
+.check{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:13px;margin:8px 0;border-radius:16px;border:1px solid rgba(130,255,69,.16);background:rgba(0,0,0,.24);color:var(--muted)}
+.check input{width:20px;height:20px;accent-color:var(--green)}
+.score{margin-top:14px;padding:16px;border-radius:18px;border:1px solid rgba(231,196,95,.38);background:rgba(231,196,95,.09);color:#ffe8aa;font-weight:900}
+.report{
+  white-space:pre-wrap;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  background:rgba(0,0,0,.42);
+  border:1px solid rgba(130,255,69,.18);
+  border-radius:18px;
+  padding:16px;
+  color:#dcebd7;
+  overflow-x:auto;
+}
+.footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}
+@media(max-width:900px){
+  .hero,.grid,.grid.two{grid-template-columns:1fr}
+  .links{display:none}
+  .row{grid-template-columns:1fr}
+  .tool-row{grid-template-columns:1fr}
+}
+
+
+.meme-board{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.mop-item{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(130,255,69,.18);background:rgba(0,0,0,.26);border-radius:16px;padding:13px 14px;color:var(--muted)}
+.mop-item strong{color:var(--text)}
+.mop-status{color:var(--green);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.bingo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bingo div{min-height:96px;border:1px solid rgba(130,255,69,.22);background:rgba(0,0,0,.28);border-radius:16px;padding:14px;font-weight:850;color:#eaf4e4}
+.copyline{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(130,255,69,.18);border-radius:16px;padding:13px 14px;margin:8px 0;background:rgba(0,0,0,.24);color:var(--muted)}
+.copyline code{color:var(--green);font-family:inherit;font-weight:800}
+.copy-mini{border:1px solid rgba(231,196,95,.36);background:rgba(231,196,95,.10);color:#ffe8a4;border-radius:999px;padding:8px 12px;font-weight:900;cursor:pointer}
+.moon-card{border:1px solid rgba(231,196,95,.35);background:rgba(231,196,95,.10);color:#ffe8a4;border-radius:24px;padding:24px;font-weight:850}
+@media(max-width:900px){.meme-board,.bingo{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="../"><img src="../assets/rugmop-original-icon.png" alt="RUGMOP icon"><span>RUGMOP</span></a>
+      <div class="links">
+        <a href="../">Meme Home</a>
+        <a href="../tools/">Mop Station</a>
+        <a href="#mop-list">Mop List</a>
+        <a href="#bingo">Rug Bingo</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump">Pump.fun</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap">
+  <div>
+    <div class="eyebrow">RUGMOP Meme Lab</div>
+    <h1>The Mop List.<br><span class="green">Bring the slop.</span></h1>
+    <p class="lead">A playable meme board for crypto slop, rug signals, reply lines, and weekly community prompts.</p>
+    <div class="actions">
+      <a class="btn" href="#mop-list">Open The Mop List</a>
+      <a class="btn alt" href="../tools/">Use Mop Station Tools</a>
+      <a class="btn gold" href="../">Back to Meme Home</a>
+    </div>
+  </div>
+  <div class="heroimg"><img src="../assets/rugmop-original-banner.png" alt="RUGMOP banner"></div>
+</section>
+
+<section id="mop-list" class="wrap">
+  <h2>The Mop List</h2>
+  <p class="sub">Crypto slop waiting to be cleaned. Use these as prompts for replies, quote posts, and community memes.</p>
+  <div class="meme-board">
+    <div class="mop-item"><strong>fake alpha</strong><span class="mop-status">needs mopping</span></div>
+    <div class="mop-item"><strong>KOL bags</strong><span class="mop-status">mop target</span></div>
+    <div class="mop-item"><strong>exit liquidity rituals</strong><span class="mop-status">too much slop</span></div>
+    <div class="mop-item"><strong>copy-paste roadmaps</strong><span class="mop-status">mopped soon</span></div>
+    <div class="mop-item"><strong>wallet drainer bait</strong><span class="mop-status">hard mop</span></div>
+    <div class="mop-item"><strong>“community takeover soon”</strong><span class="mop-status">classic slop</span></div>
+    <div class="mop-item"><strong>bridge to nowhere</strong><span class="mop-status">mop required</span></div>
+    <div class="mop-item"><strong>VC cosplay</strong><span class="mop-status">wipe it down</span></div>
+  </div>
+</section>
+
+<section id="bingo" class="wrap">
+  <h2>Rug Bingo</h2>
+  <p class="sub">If you hit three in a row, bring the mop.</p>
+  <div class="tool">
+    <div class="bingo">
+      <div>anonymous dev + pressure countdown</div>
+      <div>“guaranteed” language</div>
+      <div>fake exchange logo</div>
+      <div>private sale in DMs</div>
+      <div>copied roadmap</div>
+      <div>seed phrase request</div>
+      <div>airdrop claim link</div>
+      <div>locked replies</div>
+      <div>no official CA shown</div>
+    </div>
+  </div>
+</section>
+
+<section id="moon" class="wrap">
+  <h2>Before Moon</h2>
+  <p class="sub">A safer way to use the “to the moon” meme without turning it into fake price hype.</p>
+  <div class="moon-card">
+Before moon: check the link.<br>
+Before moon: verify the CA.<br>
+Before moon: mop the slop.<br>
+Then meme harder. 🧹
+  </div>
+</section>
+
+<section id="replies" class="wrap">
+  <h2>Reply Library</h2>
+  <p class="sub">Copyable meme replies for community interaction. Keep it funny, not misleading.</p>
+  <div class="tool">
+    <div class="copyline"><code>too much slop. bring the mop 🧹</code><button class="copy-mini" onclick="copyLine(this)">Copy</button></div>
+    <div class="copyline"><code>rug detected. mop deployed.</code><button class="copy-mini" onclick="copyLine(this)">Copy</button></div>
+    <div class="copyline"><code>verify before you click.</code><button class="copy-mini" onclick="copyLine(this)">Copy</button></div>
+    <div class="copyline"><code>this roadmap needs cleaning.</code><button class="copy-mini" onclick="copyLine(this)">Copy</button></div>
+    <div class="copyline"><code>the timeline needs fewer promises and more mops.</code><button class="copy-mini" onclick="copyLine(this)">Copy</button></div>
+  </div>
+</section>
+
+<section id="slop-week" class="wrap">
+  <h2>Slop of the Week</h2>
+  <p class="sub">A recurring content format for X posts.</p>
+  <div class="report">RUGMOP Slop of the Week #__
+
+Phrase:
+“community takeover soon”
+
+Mop rating:
+8/10
+
+Why it needs mopping:
+Usually appears after the dev vanishes, the roadmap disappears, or the chat starts coping.
+
+Community prompt:
+What phrase should be mopped next?
+
+$RUGMOP #RUGMOP #CryptoMemes #MemeCoin #Solana</div>
+</section>
+
+<section class="wrap">
+  <div class="notice">No guaranteed returns. No wallet connection. No transaction signing. Meme first, tools second.</div>
+</section>
+</main>
+
+<footer class="footer"><div class="wrap"><strong>RUGMOP Meme Lab</strong> — The Mop List, Rug Bingo, and community slop prompts.</div></footer>
+<script>
+function copyLine(btn) {
+  const text = btn.parentElement.querySelector('code').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const old = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+}
+</script>
+</body>
+</html>
