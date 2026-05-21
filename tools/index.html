@@ -3,13 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RUGMOP — Mop the rugs. Meme the slop.</title>
-<meta name="description" content="RUGMOP is a meme coin with a Web3 safety layer. Mop the rugs. Meme the slop.">
-<meta property="og:title" content="RUGMOP — Mop the rugs. Meme the slop.">
-<meta property="og:description" content="Meme coin first. Web3 safety tools second. No presale. No hidden allocation. No guaranteed returns.">
-<meta property="og:image" content="./assets/rugmop-original-banner.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="./assets/rugmop-original-icon.png">
+<title>RUGMOP Mop Station Tools</title>
+<meta name="description" content="RUGMOP Mop Station: CA verifier, official link checker, scam phrase checker, anti-rug checklist.">
+<link rel="icon" href="../assets/rugmop-original-icon.png">
 <style>
 :root{
   --bg:#030805;
@@ -231,59 +227,44 @@ input:focus,textarea:focus{border-color:rgba(130,255,69,.66);box-shadow:0 0 0 4p
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap">
     <nav>
-      <a class="brand" href="./"><img src="./assets/rugmop-original-icon.png" alt="RUGMOP icon"><span>RUGMOP</span></a>
+      <a class="brand" href="../"><img src="../assets/rugmop-original-icon.png" alt="RUGMOP icon"><span>RUGMOP</span></a>
       <div class="links">
-        <a href="#about">About</a>
-        <a href="./tools/">Mop Station</a>
-        <a href="#token">Token</a>
-        <a href="#community">Community</a>
-        <a href="#safety">Safety</a>
+        <a href="../">Meme Home</a>
+        <a href="#tools">Tools</a>
+        <a href="#checklist">Checklist</a>
         <a class="btn" target="_blank" rel="noopener" href="https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump">Pump.fun</a>
       </div>
     </nav>
   </div>
 </header>
-
-<main id="top">
+<main>
 <section class="hero wrap">
   <div>
-    <div class="eyebrow">Solana meme coin • fair launch</div>
-    <h1>Mop the rugs.<br><span class="green">Meme the slop.</span></h1>
-    <p class="lead">RUGMOP is a Solana meme coin built around one clean joke: crypto has enough rugs, AI slop, fake promises, and recycled noise. We brought a raccoon with a mop.</p>
-    <div class="actions">
-      <a class="btn" target="_blank" rel="noopener" href="https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump">View on Pump.fun</a>
-      <a class="btn alt" target="_blank" rel="noopener" href="https://x.com/RUGMOPtoken">Follow @RUGMOPtoken</a>
-      <a class="btn gold" href="./tools/">Open Mop Station Tools</a>
-    </div>
-    <div class="ca"><small><span>Official CA</span><button class="copy" onclick="copyCA()">Copy</button></small><code id="ca">CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</code></div>
+    <div class="eyebrow">Mop Station • RUGMOP tool layer</div>
+    <h1>Check the slop.<br><span class="green">Then mop it.</span></h1>
+    <p class="lead">This page contains the RUGMOP safety tools. The meme stays on the homepage; the tools live here.</p>
+    <div class="actions"><a class="btn" href="#tools">Start checking</a><a class="btn alt" href="../">Back to Meme Home</a></div>
+    <div class="ca"><small><span>Official CA</span><button class="copy" onclick="copyCA()">Copy</button></small><code>CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</code></div>
   </div>
-  <div class="heroimg"><img src="./assets/rugmop-original-banner.png" alt="RUGMOP banner"></div>
+  <div class="heroimg"><img src="../assets/rugmop-original-banner.png" alt="RUGMOP banner"></div>
 </section>
 
-<section id="about" class="wrap"><h2>Why RUGMOP</h2><p class="sub">A meme-native brand with a simple visual loop: rug detected, mop deployed.</p><div class="grid"><div class="card"><span class="tag">Narrative</span><h3>Anti-rug humor</h3><p>Turns crypto’s shared rug-pull anxiety into a readable mascot and recurring joke.</p></div><div class="card"><span class="tag">Culture</span><h3>Anti-slop energy</h3><p>Mocks fake roadmaps, AI slop, engagement bait, and copy-paste token launches.</p></div><div class="card"><span class="tag">Meme engine</span><h3>Sticker-ready</h3><p>A raccoon janitor with a mop works across X, Telegram, Discord, Pump.fun, and sticker posts.</p></div></div></section>
+<section id="tools" class="wrap"><h2>Safety Tools</h2><p class="sub">Static browser-side checks. No wallet connection. No transaction signing. No private key requests.</p><div class="grid two">
+<div class="tool"><span class="tag">Tool 01</span><h3>Official CA Verifier</h3><p class="sub">Paste a contract address to check whether it matches the official RUGMOP CA.</p><div class="tool-row"><input id="caInput" placeholder="Paste CA here"><button class="btn" onclick="verifyCA()">Verify</button></div><div id="caResult" class="result warn">Waiting for CA input.</div></div>
+<div class="tool"><span class="tag">Tool 02</span><h3>Official Link Checker</h3><p class="sub">Paste a URL to check whether it matches approved RUGMOP links.</p><div class="tool-row"><input id="linkInput" placeholder="Paste URL here"><button class="btn" onclick="verifyLink()">Check</button></div><div id="linkResult" class="result warn">Waiting for URL input.</div></div>
+<div class="tool"><span class="tag">Tool 03</span><h3>Scam Phrase Checker</h3><p class="sub">Paste a DM, tweet, or promo message and flag high-risk language.</p><textarea id="phraseInput" placeholder="Paste suspicious message here"></textarea><div class="actions"><button class="btn" onclick="scanPhrase()">Scan text</button><button class="btn alt" onclick="clearPhrase()">Clear</button></div><div id="phraseResult" class="result warn">Waiting for text input.</div></div>
+<div class="tool"><span class="tag">Mop list</span><h3>Known Slop Phrases</h3><p class="sub">These phrases are not automatic proof of fraud, but they are red flags.</p><div id="phraseList"></div></div>
+</div></section>
 
-<section id="mop-station-preview" class="wrap">
-  <h2>Mop Station</h2>
-  <p class="sub">RUGMOP stays meme-first. The tools are a second layer: quick checks for CA, links, and scam language.</p>
-  <div class="grid">
-    <div class="card"><span class="tag">Verify</span><h3>CA Verifier</h3><p>Paste a CA and check if it matches official RUGMOP.</p></div>
-    <div class="card"><span class="tag">Inspect</span><h3>Link Checker</h3><p>Check whether a URL matches the official RUGMOP link list.</p></div>
-    <div class="card"><span class="tag">Scan</span><h3>Scam Phrase Checker</h3><p>Flag suspicious language like guaranteed returns, private sales, or seed phrase requests.</p></div>
-  </div>
-  <div class="actions"><a class="btn" href="./tools/">Open full tools page</a></div>
-</section>
+<section id="checklist" class="wrap"><h2>Anti-rug Checklist</h2><p class="sub">Check any project. More checked boxes means more risk signals to investigate before interacting.</p><div class="tool"><div id="rugChecklist"></div><div class="score" id="riskScore">Risk score: 0 / 10 — clean for now.</div></div></section>
 
-<section id="token" class="wrap"><h2>Token Info</h2><p class="sub">Verify the CA before interacting with any token page.</p><div class="table"><div class="row"><div class="cell">Name</div><div class="cell">RUGMOP</div></div><div class="row"><div class="cell">Ticker</div><div class="cell">$RUGMOP</div></div><div class="row"><div class="cell">Chain</div><div class="cell">Solana</div></div><div class="row"><div class="cell">Launch</div><div class="cell">Pump.fun</div></div><div class="row"><div class="cell">CA</div><div class="cell">CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</div></div><div class="row"><div class="cell">Presale</div><div class="cell">None</div></div><div class="row"><div class="cell">Hidden allocation</div><div class="cell">None stated by the official project</div></div><div class="row"><div class="cell">Creator rewards</div><div class="cell">Enabled and routed to the official creator profile</div></div><div class="row"><div class="cell">Guarantees</div><div class="cell">No guaranteed returns. Meme coin risk applies.</div></div></div></section>
-
-<section id="community" class="wrap"><h2>Community Hub</h2><p class="sub">The website gives RUGMOP a stable home. Next step: add Telegram or Discord once the official hub is ready.</p><div class="grid"><div class="card"><span class="tag">Live</span><h3>Official X</h3><p>@RUGMOPtoken is the primary announcement channel.</p></div><div class="card"><span class="tag">Live</span><h3>Pump.fun</h3><p>Official trading page and launch record.</p></div><div class="card"><span class="tag">Coming soon</span><h3>TG / Discord</h3><p>Add a community hub only when moderation rules and scam warnings are ready.</p></div></div></section>
-
-<section id="safety" class="wrap"><h2>Safety</h2><p class="sub">RUGMOP is a meme coin. It is not an investment product, equity, yield product, or guaranteed-return asset.</p><div class="grid"><div class="card"><span class="tag">Rule 01</span><h3>No DMs first</h3><p>The official project will not DM you first to sell tokens.</p></div><div class="card"><span class="tag">Rule 02</span><h3>No seed phrase</h3><p>Never share seed phrases, private keys, or sign unknown transactions.</p></div><div class="card"><span class="tag">Rule 03</span><h3>Official links only</h3><p>Use only links posted on @RUGMOPtoken and this website.</p></div></div><div class="notice">Meme coin risk: no guaranteed returns. Crypto assets are volatile and may lose all value.</div></section>
+<section id="report" class="wrap"><h2>Weekly Slop Report</h2><p class="sub">A repeatable content format for weekly safety education and meme distribution.</p><div class="tool"><div class="report" id="reportTemplate"></div><div class="actions"><button class="btn" onclick="copyReport(this)">Copy report template</button></div></div></section>
+<section class="wrap"><div class="notice">Tools are informational. They do not replace your own research. Never share seed phrases or sign unknown transactions.</div></section>
 </main>
-<footer class="footer"><div class="wrap"><strong>RUGMOP</strong> — Mop the rugs. Meme the slop. Official CA: CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</div></footer>
+<footer class="footer"><div class="wrap"><strong>RUGMOP Mop Station</strong> — Tool layer for the meme. Official CA: CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump</div></footer>
 
 <script>
 const OFFICIAL_CA="CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump";

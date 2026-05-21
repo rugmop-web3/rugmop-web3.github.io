@@ -1,13 +1,17 @@
-# RUGMOP Official Website v1
+# RUGMOP Original Meme Home + Mop Station Tools
 
-Static official landing page for RUGMOP.
+Final upload-ready package.
 
-Official:
-- X: https://x.com/RUGMOPtoken
-- Pump.fun: https://pump.fun/coin/CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump
-- CA: CAdyFkizcLASdkPqB2VK3zYRKciDuzxTVLB6LzyKpump
+Structure:
+- /          Original-style meme homepage, preserving the original cover and main title.
+- /tools/    Separate utility page for CA verifier, link checker, scam phrase checker, checklist, and slop report.
 
-Deploy this folder to Cloudflare Pages, Vercel, Netlify, or GitHub Pages.
+Upload all contents to the root of `rugmop-web3/rugmop-web3.github.io`.
 
-Do not add any unconfigured creator allocation/cap claim.
-Do not add guaranteed-return language.
+Files:
+- index.html
+- tools/index.html
+- assets/rugmop-original-banner.png
+- assets/rugmop-original-icon.png
+- .nojekyll
+- README.md
